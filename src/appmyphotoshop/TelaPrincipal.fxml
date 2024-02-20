@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appmyphotoshop.TelaPrincipalController">
+   <center>
+      <ScrollPane fx:id="pnscrool" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#evtTrocaCores" pickOnBounds="true" preserveRatio="true" />
+         </content>
+      </ScrollPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arquivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#evtAbrir" text="Abrir..." />
+                  <MenuItem mnemonicParsing="false" onAction="#evtSalvarComo" text="Salvar Como...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtFechar" text="Fechar" />
+            </items>
+          </Menu>
+          <Menu fx:id="mtransf" mnemonicParsing="false" text="Transformações">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#evtTomCinza" text="Tons de Cinza" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtPretoBranco" text="Preto e Branco" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtNegativo" text="Negativo" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtEspelhoHorizontal" text="Espelho Horizontal" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtEspelhoVertical" text="Espelho Vertical" />
+            </items>
+          </Menu>
+            <Menu fx:id="mimagej" mnemonicParsing="false" text="ImageJ">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#evtDetecBorda" text="Detectar borda" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtDilatação" text="Dilatação" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtErosão" text="Erosão" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtSmooth" text="Suavização" />
+                  <MenuItem mnemonicParsing="false" onAction="#evtGamma" text="Gamma" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
